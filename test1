@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+
+int main(void)
+{
+	int arr[5] = {3,8,2,1,5};
+	int min_value = arr[0];
+	int min_index = 0;
+
+	for (int i = 1; i < 5; i++) 
+	{
+		if (arr[i] < min_value)
+		{
+			min_value = arr[i];
+			min_index = i;
+		}
+		else
+			continue;
+
+	}
+	printf("min_value = %d, min_index = %d", min_value, min_index);
+	return 0;
+}
