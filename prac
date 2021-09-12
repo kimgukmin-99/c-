@@ -1,0 +1,53 @@
+
+#include <stdio.h>
+
+
+int main(void)
+{
+	double hei[5] = { 0 };
+	double wei[5] = { 0 };
+	double bmi[5] = { 0 };
+	printf("5명의 키를 입력하세요(cm)>> ");
+	for (int i = 0; i < 5; i++)
+	{
+		scanf_s("%lf", &hei[i]);
+	}
+	printf("5명의 키를 입력하세요(kg)>> ");
+	for (int i = 0; i < 5; i++)
+	{
+		scanf_s("%lf", &wei[i]);
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		double hei_m = hei[i] / 100;
+		bmi[i] = wei[i] / (hei_m * hei_m);
+	}
+	printf("5명의 BMI: ");
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%.1f ", bmi[i]);
+	}
+	printf("\n");
+	int k;
+	double bmi_2[4] = { 0 };
+	printf("k = ");
+	scanf_s("%d", &k);
+	int cnt = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		if (i == k)
+			continue;
+		bmi_2[cnt] = bmi[i];
+		cnt++;
+	}
+
+	printf("%d번을 뺀 4명의 BMI: ", k);
+	for (int i = 0; i < 4; i++)
+	{
+		printf("%.1f ", bmi_2[i]);
+
+	}
+
+	return 0;
+}
+
