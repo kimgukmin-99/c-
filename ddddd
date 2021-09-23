@@ -1,0 +1,24 @@
+#include <stdio.h>
+#define size 5
+
+void array_copy(int[], int[], int);
+
+void array_copy(int a[], int b[], int k) {
+	for (int i = 0; i < k; i++) {
+		b[i] = a[i];
+	}
+}
+
+
+int main(void) {
+	int arr1[size] = { 4,12,7,0,9 };
+	int arr2[size] = { 0 };
+	array_copy(arr1, arr2, size);
+
+	for (int i = 0; i < size; i++) {
+		printf("arr2[%d] = %d\n", i, arr2[i]);
+		
+	}
+	return 0;
+}
+========
