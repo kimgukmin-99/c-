@@ -1,3 +1,4 @@
+//실습문제2
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -43,4 +44,59 @@ int main()
 
 	return 0;
 }
-=========================
+======================
+//실습문제3
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N_ROLL  10
+
+void initialize(int arr[], int size, int min, int max);
+
+
+void initialize(int arr[], int size, int min_value, int max_value) {
+	srand((unsigned int)time(NULL));
+	for (int i = 0; i < size; i++) {
+		arr[i] = rand() % (max_value - min_value + 1) + min_value;
+	}
+}
+
+
+
+int main() 
+{
+	int primes[10] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+	int nums[100] = { 0 };
+	initialize(nums, 100, 0, 1000);
+	for (int i = 2; i <= 20; i++) 
+	{
+		int cnt = 0;
+		for (int j = 0; j < 100; j++)
+		{
+			if (nums[j] % i == 0)
+			{
+				cnt++;
+			}
+		}
+		printf("%d의 배수: %d\n", i, cnt);
+	}
+	printf("\n");
+	for (int i = 0; i < 10; i++)
+	{
+		int cnt = 0;
+		for (int j = 0; j < 100; j++)
+		{
+			if (nums[j] % primes[i] == 0)
+			{
+				cnt++;
+			}
+		}
+		printf("%d의 배수: %d개\n", primes[i], cnt);
+	}
+
+	return 0;
+}
+===========
+
+
