@@ -98,5 +98,32 @@ int main()
 	return 0;
 }
 ===========
+//실습문제 4
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
+int main() 
+{
+	int scores[15] = { 5, 23, 100, 95, 80, 77, 69, 85, 92, 98, 54, 62, 90, 76, 85 };
+	int arr[11] = { 0 };
+	for (int i = 0; i < 15; i++)
+	{
+		int k = scores[i] / 10;
+		arr[k]++;
+	}
+	for (int i = 0; i < 11; i++)
+	{
+		printf("%2d~ %2d: ", i, i + 9);
+		for (int j = 0; j < arr[i]; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
 
+	return 0;
+}
+
+===============
+//실습문제 5
