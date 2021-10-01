@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+struct log
+{
+	char name[20];
+	int id;
+	int passwd;
+	char log[20];
+};
+
+
+
+int main(void) {
+
+	struct log user1 = {"사용자1", 11115, 1234, "2021-05-07"};
+	struct log user2 = { "사용자2", 12226, 5678, "2021-08-07" };
+	struct log user3 = { 0 };
+
+	printf("이름>> ");
+	scanf_s("%s", user3.name, 20);
+	printf("id>> ");
+	scanf_s("%d", &user3.id);
+	printf("passwd>> ");
+	scanf_s("%d", &user3.passwd);
+	printf("최근접속일>> ");
+	scanf_s("%s", user3.log, 20);
+	printf("\n");
+
+	printf("이름: %s\n", user1.name);
+	printf("id: %d\n", user1.id);
+	printf("비밀번호: %d\n", user1.passwd);
+	printf("최근접속일: %s\n", user1.log);
+	printf("\n");
+	printf("이름: %s\n", user2.name);
+	printf("id: %d\n", user2.id);
+	printf("비밀번호: %d\n", user2.passwd);
+	printf("최근접속일: %s\n", user2.log);
+	printf("\n");
+	printf("이름: %s\n", user3.name);
+	printf("id: %d\n", user3.id);
+	printf("비밀번호: %d\n", user3.passwd);
+	printf("최근접속일: %s\n", user3.log);
+	printf("\n");
+	return 0;
+}
