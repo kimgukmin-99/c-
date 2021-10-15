@@ -1,0 +1,53 @@
+#include<stdio.h>
+
+typedef struct {
+	char name[20];
+	int age;
+	char num[20];
+	char dis[20];
+}PROFILE;
+
+
+void print_profile(PROFILE);
+
+void print_profile(PROFILE profile) {
+	printf("%s(%d), ", profile.name,profile.age);
+	printf("%s, ", profile.num);
+	printf("%s ", profile.dis);
+	printf("\n");
+}
+
+
+
+
+
+int main(void) {
+	PROFILE profile_arr[4] = {
+		{"홍길동", 23, "012-345-6789",  "울릉도"},
+		{"이순신", 35, "111-222-3333", "서울 건천동"},
+		{"장보고", 19, "222-333-4444", "청해진"},
+		{"유관순", 15, "333-444-5555", "충남 천안"}
+	};
+
+	for (int i = 0; i < 4; i++){
+		print_profile(profile_arr[i]);
+	}
+	printf("주소록의 모든 거주지: ");
+	for (int i = 0; i < 4; i++) {
+		printf("%s " , profile_arr[i].dis);
+	}
+	printf("\n");
+
+	int maxage = 0;
+	for (int i = 0; i < 4; i++)
+	{	
+		if (maxage < profile_arr[i].age )
+		{
+			maxage = profile_arr[i].age;
+		}
+	}
+	printf("가장 나이가 많은사람: %s(%d)", profile_arr[maxage].name, profile_arr[maxage].age);
+
+
+	return 0;
+}
