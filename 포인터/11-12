@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include <math.h>
+
+
+void inc_by_10(int* xp) {
+	*xp += 10;
+}
+
+
+
+int main(void) {
+	
+	int x; printf("x = "); 
+	scanf_s("%d", &x); 
+	inc_by_10(&x); 
+	printf("x = %d\n", x); 
+	printf("\n");
+
+	return 0;
+}
+==============
+
+#include<stdio.h>
+#include <math.h>
+
+
+void mult2_int(int* xp) { 
+	*xp *= 2; }
+
+
+int main(void) {
+	int x = 10, y = 20, z = 30; 
+	mult2_int(&x); 
+	mult2_int(&y); 
+	mult2_int(&z); 
+	printf(" % d % d % d\n", x, y, z);
+
+	return 0;
+}
+
+=======
+#include<stdio.h>
+#include <math.h>
+
+
+void swap(int* x, int* y) {
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+int main(void) {
+	int x = 10, y = 20;
+
+	printf("실행전 x, y = % d, % d\n", x, y); 
+	// 10, 20
+
+	swap(&x, &y);
+
+	printf("실행후 x, y = % d, % d\n", x, y); 
+	// 20, 10
+
+	
+	return 0;
+}
+=======================
+
+#include<stdio.h>
+#include <math.h>
+
+
+void calc(int arr[],int size, int* total, double* avg) {
+	int temp = 0;
+	for (int i = 0; i < size; i++) {
+		temp += arr[i];
+	}
+	*total = temp;
+	*avg = temp / size;
+
+}
+
+int main(void) {
+	int score[5] = { 100, 65, 22, 87, 95 }; 
+	int total; 
+	double avg; 
+	calc(score, 5, &total, &avg); 
+	printf("%d %.2f\n", total, avg);
+}
+
+==========
+#include<stdio.h>
+#include <math.h>
+
+
+void inc_by_k(int* ip, int k) {
+	*ip += k;
+	}
+
+int main(void) {
+
+	int arr[5] = { 1, 2, 3, 4, 5 }; 
+	int i, k; 
+	printf("i k = "); 
+	scanf_s("%d%d", &i, &k);
+
+	// arr[i]를k만큼증가시킴
+	inc_by_k(&arr[i], k); 
+	printf("arr[%d] = %d\n", i, arr[i]);
+}
+
+==============
