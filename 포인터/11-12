@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include <math.h>
 
@@ -76,7 +77,7 @@ void calc(int arr[],int size, int* total, double* avg) {
 		temp += arr[i];
 	}
 	*total = temp;
-	*avg = temp / size;
+	*avg = temp / (double)size;
 
 }
 
@@ -110,3 +111,21 @@ int main(void) {
 }
 
 ==============
+void char_upper(char* cp) {
+	if ('a' <= *cp && *cp <= 'z') {
+		*cp = *cp - ('a' - 'A');
+	}
+}
+void main(void) {
+	{
+		char alphabet[6] = { 'a', 'B', 'c', 'D', 'e', '\0' };
+		for (int i = 0; i < 5; i++) {
+			char_upper(&alphabet[i]);
+		}
+		for (int i = 0; i < 5; i++) {
+			printf("%c", alphabet[i]);
+		}
+		printf("\n\n");
+	}
+
+}
